@@ -14,8 +14,8 @@ class Country(NamedTuple):
     def lon(self) -> float:
         return (self.lonMin + self.lonMax) / 2
 
-    def bbox(self) -> tuple[float, float, float, float]:
-        return self.latMin, self.latMax, self.lonMin, self.lonMax
+    def bbox(self, minFirst=False) -> tuple[float, float, float, float]:
+        return (self.latMin, self.latMax, self.lonMin, self.lonMax) if not minFirst else (self.lonMin, self.latMin, self.lonMax, self.latMax)
 
 
 def getCountry(iso_code: str) -> Country:
