@@ -1,4 +1,5 @@
 import os
+from math import log2
 
 import mapbox
 
@@ -19,9 +20,12 @@ def featureAtLatLon(lat: float, lon: float):
 
 
 def getMap(country: Country, features=None) -> int:
-    print(F"Lon & lat: {(country.lon(), country.lat())}")
+    # print(mapbox.Geocoder().forward("fi").content)
+    zoom = log2(360 / abs(country.lonMax - country.lonMin))
+    zoom *= 0.95
+
     response = mapbox.StaticStyle().image(username="mapbox", style_id="dark-v10",
-                                          lon=country.lon(), lat=country.lat(), zoom=4.8, pitch=0.0,
+                                          lon=country.lon(), lat=country.lat(), zoom=zoom, pitch=0.0,
                                           width=720, height=1080, features=features
                                           )
     if "image" in response.headers["Content-Type"]:

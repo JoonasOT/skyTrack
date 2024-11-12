@@ -4,11 +4,11 @@ from src.country import getCountry
 
 
 def main():
-    country = getCountry("FI")
+    country = getCountry("IT")
     print(country)
     planes = getPlanes(country)
     print(planes)
-    print(getMap(country,  [featureAtLatLon(plane.latitude, plane.longitude) for plane in planes.states]))
+    print(getMap(country))
 
 
 if __name__ == "__main__":
