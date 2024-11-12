@@ -1,2 +1,2 @@
 # skyTrack
-Small project that given a coutry draws a map of said country and gets with airtraffic over said map.
+Small project that given a draws a map of given country and adds the air traffic above said country to the map.
