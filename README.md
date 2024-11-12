@@ -1,2 +1,2 @@
 # skyTrack
-An old project of mine that I'm uploading here slowly but surely
+Small project that given a coutry draws a map of said country and gets with airtraffic over said map.
